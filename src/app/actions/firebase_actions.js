@@ -1,7 +1,7 @@
 import FireBaseTools from '../utils/firebase';
 
 export function loginWithProvider(provider){
-  console.log("shemovida : ", provider);
+  console.log("Firebase_action provider : ", provider);
   const request = FireBaseTools.loginWithProvider(provider);
   return {
     type : 'LOGIN_WITH_PROVIDER_FIREBASE',

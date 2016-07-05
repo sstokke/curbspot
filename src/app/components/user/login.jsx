@@ -17,17 +17,16 @@ class UserLogin extends Component {
     }
 
     loginWithProvider(provider){
-      console.log("provider :", provider);
+      console.log("Login provider :", provider);
       this.props.loginWithProvider(provider).then(data=>{
         console.log("After login in provider : ", data);
-        
+
         if (data.payload.errorCode)
             this.setState({message: data.payload.errorMessage})
         else
             browserHistory.push('/profile');
 
       });
-      // alert("login with provider");
     }
 
     onFormSubmit(event) {
@@ -68,13 +67,8 @@ class UserLogin extends Component {
 
                     <h4>Login with</h4>
                     <a href="#" className="btn btn-primary bt-social" onClick={()=>{this.loginWithProvider("facebook")}} data-provider="facebook">Facebook</a>
-                    {/*
-                    <a href="#" className="btn btn-info bt-social" data-provider="twitter">Twitter</a>
 
-                    <a href="#" className="btn btn-danger bt-social" data-provider="google">Google+</a>
-                    <a href="#" className="btn btn-default bt-social" data-provider="github">GitHub</a>
-                    <a href="#" className="btn btn-warning" id="btAnon">Anon</a>
-                    */}
+                    <a href="#" className="btn btn-primary bt-social" onClick={()=>{this.loginWithProvider("twitter")}} data-provider="twitter">Twitter</a>
 
                 </form>
             </div>

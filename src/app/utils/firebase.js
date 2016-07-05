@@ -6,7 +6,6 @@ import { currentUserPromise, fetchUserObject } from './localstorage';
 
 firebase.initializeApp(FIREBASE_CONFIG);
 
-// FIREBASE TOOL OBJECT LITERAL
 var FireBaseTools = {
 
     getProvider: (provider) => {
@@ -15,14 +14,13 @@ var FireBaseTools = {
             case "facebook":
                 return new firebase.auth.FacebookAuthProvider();
                 break;
-            case "google":
-                return new firebase.auth.GoogleAuthProvider();
+            case "twitter":
+                return new firebase.auth.TwitterAuthProvider();
                 break;
             default:
 
         }
     },
-    // Login with provider => p is provider "facebook" or "google"
     loginWithProvider: (p) => {
 
         return new Promise((resolve, reject) => {

@@ -7,7 +7,7 @@
   "scripts": {
     "dev": "webpack-dev-server --config ./webpack/webpack-dev.config.js --watch --colors",
     "build": "rm -rf dist && webpack --config ./webpack/webpack-prod.config.js --colors",
-    "start": "PORT=8080 pm2 start ./www.js",
+    "start": "PORT=8080 pm2 start ./www.js"
   },
   "author": "Sean Stokke",
   "license": "MIT",

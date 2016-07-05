@@ -19,9 +19,13 @@ class UserProfile extends Component{
 
   onFormSubmit(event){
     event.preventDefault();
-    var email = this.refs.email.value;
-    var displayName = this.refs.displayName.value;
-    this.props.updateUser({email: email, displayName: displayName}).then(data => {
+    let bizName = this.refs.bizName.value;
+    let firstName = this.refs.firstName.value;
+    let lastName = this.refs.lastName.value;
+    let phoneNumber = this.refs.phoneNumber.value;
+    let email = this.refs.email.value;
+    let password = this.refs.password.value;
+    this.props.updateUser({email: email, password: password, firstName: firstName, lastName: lastName, phoneNumber: phoneNumber, bizName: bizName}).then(data => {
 
         if (data.payload.errorCode)
             this.setState({message: data.payload.errorMessage})

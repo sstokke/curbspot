@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators  } from 'redux';
 import { fetchUser,logoutUser }  from '../actions/firebase_actions';
 import { currentUser } from '../utils/localstorage';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 class App extends Component {
 
@@ -17,7 +18,6 @@ class App extends Component {
   logOut(){
 
     this.props.logoutUser().then(data=>{
-      // reload props from reducer
       this.props.fetchUser();
     });
 
@@ -54,7 +54,7 @@ class App extends Component {
                  <span className="icon-bar"></span>
                  <span className="icon-bar"></span>
                  <span className="icon-bar"></span>
-               </button> <Link to="/" className="navbar-brand">CurbSpot</Link>
+               </button> <Link to="/" className="navbar-brand"><img src="../assets/Curbspot_2.png" /></Link>
 
             </div>
             <nav className="collapse navbar-collapse bs-navbar-collapse" role="navigation">

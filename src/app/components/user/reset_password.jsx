@@ -13,8 +13,8 @@ class ResetPassword extends Component {
 
     }
 
-    onFormSubmit(event) {
-        event.preventDefault();
+    onFormSubmit(e) {
+        e.preventDefault();
         var email = this.refs.email.value;
         this.props.resetPasswordEmail(email).then(data => {
 
@@ -23,7 +23,7 @@ class ResetPassword extends Component {
             else
                 this.setState({message: "Please see your email!"})
 
-            
+
         });
 
     }

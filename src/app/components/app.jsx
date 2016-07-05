@@ -54,7 +54,7 @@ class App extends Component {
                  <span className="icon-bar"></span>
                  <span className="icon-bar"></span>
                  <span className="icon-bar"></span>
-               </button> <Link to="/" className="navbar-brand"><img src="../assets/Curbspot_2.png" /></Link>
+               </button> <Link to="/" className="navbar-brand"><img src="../app/assets/Curbspot_2.png" /></Link>
 
             </div>
             <nav className="collapse navbar-collapse bs-navbar-collapse" role="navigation">

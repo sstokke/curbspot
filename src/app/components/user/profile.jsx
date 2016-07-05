@@ -17,8 +17,8 @@ class UserProfile extends Component{
       this.onFormSubmit = this.onFormSubmit.bind(this);
   }
 
-  onFormSubmit(event){
-    event.preventDefault();
+  onFormSubmit(e){
+    e.preventDefault();
     let bizName = this.refs.bizName.value;
     let firstName = this.refs.firstName.value;
     let lastName = this.refs.lastName.value;

@@ -15,8 +15,8 @@ class UserRegister extends Component {
 
     }
 
-    onFormSubmit(event) {
-        event.preventDefault();
+    onFormSubmit(e) {
+        e.preventDefault();
         let bizName = this.refs.bizName.value;
         let firstName = this.refs.firstName.value;
         let lastName = this.refs.lastName.value;
@@ -41,29 +41,30 @@ class UserRegister extends Component {
                 <form id="frmRegister" role="form" onSubmit={this.onFormSubmit}>
                     <p>{this.state.message}</p>
                     <h2>Become a Member!</h2>
+                    <h6>*All fields required</h6>
                       <div className="form-group">
                             <label>Business Name</label>
-                            <input type="text" className="form-control" ref="bizName" id="bizName" placeholder="Enter your business's name" name="bizName"/>
+                            <input type="text" className="form-control" ref="bizName" id="bizName" placeholder="Enter your business's name" name="bizName" required/>
                       </div>
                     <div className="form-group">
                           <label>First Name</label>
-                          <input type="text" className="form-control" ref="firstName" id="firstName" placeholder="Enter first name" name="firstName"/>
+                          <input type="text" className="form-control" ref="firstName" id="firstName" placeholder="Enter first name" name="firstName" required/>
                     </div>
                     <div className="form-group">
                           <label>Last Name</label>
-                          <input type="text" className="form-control" ref="lastName" id="lastName" placeholder="Enter last name" name="lastName"/>
+                          <input type="text" className="form-control" ref="lastName" id="lastName" placeholder="Enter last name" name="lastName" required/>
                     </div>
                     <div className="form-group">
-                          <label>Phone Number</label>
-                          <input type="tel" className="form-control" ref="phoneNumber" id="phoneNumber" placeholder="Enter contact number" name="phoneNumber"/>
+                          <label>Phone Number <em>(ex. 123-456-7890)</em></label>
+                          <input type="tel" className="form-control" ref="phoneNumber" id="phoneNumber" placeholder="Enter contact number" name="phoneNumber" pattern="^\d{3}-\d{3}-\d{4}$" required/>
                     </div>
                     <div className="form-group">
                         <label htmlFor="txtRegEmail">Email address</label>
-                        <input type="email" className="form-control" ref="email" id="txtEmail" placeholder="Enter email" name="email"/>
+                        <input type="email" className="form-control" ref="email" id="txtEmail" placeholder="Enter email" name="email" required/>
                     </div>
                     <div className="form-group">
                         <label htmlFor="txtRegPass">Password</label>
-                        <input type="password" className="form-control" ref="password" id="txtPass" placeholder="Password" name="password"/>
+                        <input type="password" className="form-control" ref="password" id="txtPass" placeholder="Password" name="password" required/>
                     </div>
                     <button type="submit" className="btn btn-default">Enroll in CurbSpot!</button>
                 </form>

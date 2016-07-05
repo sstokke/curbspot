@@ -9,7 +9,6 @@ export function loginWithProvider(provider){
   }
 }
 
-///// EXPORTED ACTIONS
 export function registerUser(user) {
 
     const request = FireBaseTools.registerUser(user);
@@ -27,7 +26,6 @@ export function loginUser(user) {
     }
 }
 
-// fetch already authentciated user
 export function fetchUser() {
 
     const request = FireBaseTools.fetchUser();

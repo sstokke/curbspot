@@ -9,7 +9,6 @@ import App from './components/app';
 import reducers from './reducers';
 import routes from './routes'
 
-// for bundling you styles
 import './bundle.scss';
 
 const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
@@ -20,4 +19,4 @@ ReactDOM.render(
   <Router history={browserHistory} routes={routes}>
   </Router>
   </Provider>
-  , document.querySelector('.react-root'));
+  , document.getElementById('curbspot'));

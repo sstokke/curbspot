@@ -24,7 +24,6 @@ class App extends Component {
   }
 
   renderUserMenu(currentUser){
-    // if current user exists and user id exists than make user navigation
     if(currentUser && currentUser.uid)
       return (
           <li className="dropdown">
@@ -55,7 +54,7 @@ class App extends Component {
                  <span className="icon-bar"></span>
                  <span className="icon-bar"></span>
                  <span className="icon-bar"></span>
-               </button> <Link to="/" className="navbar-brand">Firebase & Redux boilerplate</Link>
+               </button> <Link to="/" className="navbar-brand">CurbSpot</Link>
 
             </div>
             <nav className="collapse navbar-collapse bs-navbar-collapse" role="navigation">

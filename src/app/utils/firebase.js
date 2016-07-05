@@ -1,17 +1,8 @@
 import firebase from 'firebase/app';
 import firebase_auth from 'firebase/auth';
-import {
-    FIREBASE_CONFIG
-} from '../config';
-import {
-    currentUserPromise,
-    fetchUserObject
-} from './localstorage';
+import { FIREBASE_CONFIG } from '../config';
+import { currentUserPromise, fetchUserObject } from './localstorage';
 
-// You can remove it
-if (FIREBASE_CONFIG.apiKey.length < 1) {
-    alert("Please fill your Firebase settings to config.js ");
-}
 
 firebase.initializeApp(FIREBASE_CONFIG);
 
@@ -228,5 +219,4 @@ var FireBaseTools = {
 
 }
 
-// export FirebaseTolls
 export default FireBaseTools;

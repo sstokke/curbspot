@@ -25,25 +25,21 @@ var FireBaseTools = {
 
         return new Promise((resolve, reject) => {
 
-            var provider = FireBaseTools.getProvider(p);
-            firebase.auth().signInWithPopup(provider).then(function(result) {
+            let provider = FireBaseTools.getProvider(p);
 
-                // This gives you a Facebook Access Token. You can use it to access the Facebook API.
-                var token = result.credential.accessToken;
-                // The signed-in user info.
-                var user = result.user;
-                // save user to localstorage
+            firebase.auth().signInWithRedirect(provider).then(function(result) {
+                if(result.credential) {
+                let token = result.credential.accessToken;
+              }
+                let user = result.user;
                 fetchUserObject(user).then(user => {
                     resolve(user);
                 })
 
 
             }).catch(function(error) {
-
-                // The email of the user's account used.
-                var email = error.email;
-                // The firebase.auth.AuthCredential type that was used.
-                var credential = error.credential;
+                let email = error.email;
+                let credential = error.credential;
 
                 reject({
                     errorCode: error.code,
